@@ -15,7 +15,7 @@
                 <h3>Learn about the countries before you decide to take on the <strong>Country Quiz</strong></h3>
             </div>
 
-            <div ng-controller="listController as list" ng-hide="list.quizActive">
+            <div ng-controller="listController as list" ng-hide="list.quizMetrics.quizActive">
 
                 <form class="form-inline well well-sm clearfix">
                     <span class="glyphicon glyphicon-search"></span>
@@ -73,7 +73,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> <!--End of listController-->
+
+            <div ng-controller="quizController as quiz" ng-show="quiz.quizMetrics.quizActive">
+                <h1>Quiz</h1>
+            </div> <!-- ******* End of Quiz Controller ****** -->
+
         </div>
 
         <!--Third Party js-->
@@ -83,5 +88,7 @@
         <!--Application js-->
         <script src="js/app.js"></script>
         <script src="js/controllers/listController.js"></script>
+        <script src="js/controllers/quizController.js"></script>
+        <script src="factories/quizMetrics.js"></script>
 </body>
 </html>
