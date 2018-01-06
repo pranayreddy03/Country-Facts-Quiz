@@ -12,7 +12,14 @@
         list.changeActiveCountry = function(index)
                                     {
                                         list.activeCountry = index;
-                                    }
+                                    };
+
+        list.search = "";
+        list.quizActive = false;
+        list.activateQuiz = function()
+        {
+            list.quizActive = true;
+        }
     }
 
     var countriesData =
