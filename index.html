@@ -29,6 +29,36 @@
                                     <p><strong>Currency: </strong>{{country.monetaryUnit}}</p>
                                     <p><strong>National Language: </strong>{{country.nationalLanguage}}</p>
                                     <p><strong>Total Area: </strong>{{country.totalArea}}</p>
+                                    <button class="btn btn-primary pull-right" ng-click="list.changeActiveCountry(country)" data-toggle="modal" data-target="#country-info">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="country-info">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>{{list.activeCountry.name}}</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xs-6 col-xs-offset-3">
+                                        <img ng-src="{{list.activeCountry.image}}" class="img-responsive img-rounded">
+                                    </div>
+                                </div>
+                                <div class="row top-buffer">
+                                    <div class="col-md-6">
+                                        <p><strong>Capital: </strong>{{list.activeCountry.capital}}</p>
+                                        <p><strong>Currency: </strong>{{list.activeCountry.monetaryUnit}}</p>
+                                        <p><strong>National Language: </strong>{{list.activeCountry.nationalLanguage}}</p>
+                                        <p><strong>Total Area: </strong>{{list.activeCountry.totalArea}}</p>
+                                    </div>
+                                    <div class="top-buffer col-xs-12">
+                                        <p>{{list.activeCountry.description}}</p>
+                                        <button class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
