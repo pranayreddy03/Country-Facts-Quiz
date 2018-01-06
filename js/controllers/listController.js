@@ -8,6 +8,11 @@
     {
         var list = this;
         list.data = countriesData;
+        list.activeCountry = {};
+        list.changeActiveCountry = function(index)
+                                    {
+                                        list.activeCountry = index;
+                                    }
     }
 
     var countriesData =
