@@ -15,9 +15,18 @@
                 <h3>Learn about the countries before you decide to take on the <strong>Country Quiz</strong></h3>
             </div>
 
-            <div ng-controller="listController as list">
+            <div ng-controller="listController as list" ng-hide="list.quizActive">
+
+                <form class="form-inline well well-sm clearfix">
+                    <span class="glyphicon glyphicon-search"></span>
+                    <input type="text" placeholder="Search" class="form-control" ng-model="list.search">
+                    <button class="btn btn-warning pull-right" ng-click="list.activateQuiz()">
+                        <strong>Start Quiz</strong>
+                    </button>
+                </form>
+
                 <div class="row">
-                    <div class="col-sm-6" ng-repeat="country in list.data">
+                    <div class="col-sm-6" ng-repeat="country in list.data | filter:list.search">
                         <div class="well well-sm">
                             <div class="row">
                                 <div class="col-md-6">
