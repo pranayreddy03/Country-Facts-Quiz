@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="countryFacts">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale =1">
+    <title>Countries Quiz</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+        <div class="container">
+            <div class="page-header">
+                <h1>Country Facts Quiz</h1>
+                <h3>Learn about the countries before you decide to take on the <strong>Country Quiz</strong></h3>
+            </div>
+
+            <div ng-controller="listController as list">
+                <div class="row">
+                    <div class="col-sm-6" ng-repeat="country in list.data">
+                        <div class="well well-sm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img ng-src="{{country.image}}" class="img-responsive img-rounded">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>{{country.name}}</h4>
+                                    <p><strong>Capital: </strong>{{country.capital}}</p>
+                                    <p><strong>Currency: </strong>{{country.monetaryUnit}}</p>
+                                    <p><strong>National Language: </strong>{{country.nationalLanguage}}</p>
+                                    <p><strong>Total Area: </strong>{{country.totalArea}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Third Party js-->
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!--Application js-->
+        <script src="js/app.js"></script>
+        <script src="js/controllers/listController.js"></script>
+</body>
+</html>
