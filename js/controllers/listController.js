@@ -4,7 +4,8 @@
     angular.module('countryFacts')
            .controller('listController',listController);
 
-    function listController()
+    listController.$inject = ['quizMetrics'];
+    function listController(quizMetrics)
     {
         var list = this;
         list.data = countriesData;
@@ -15,11 +16,14 @@
                                     };
 
         list.search = "";
-        list.quizActive = false;
+        list.quizMetrics = quizMetrics;
+
         list.activateQuiz = function()
         {
-            list.quizActive = true;
-        }
+            quizMetrics.changeState(true);
+        };
+
+
     }
 
     var countriesData =
