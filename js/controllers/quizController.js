@@ -31,21 +31,34 @@
                                     quiz.setActiveQuestion();
                                 };
 
-        quiz.setActiveQuestion = function()
+        quiz.setActiveQuestion = function(index)
         {
-            console.log('two');
-            var breakOut = false;
-            var quizLength = dataService.quizQuestions.length - 1;
-
-            while(!breakOut)
+            if(index === undefined)
             {
-                quiz.activeQuestion = quiz.activeQuestion < quizLength ? ++quiz.activeQuestion : 0;
+                console.log('two');
+                var breakOut = false;
+                var quizLength = dataService.quizQuestions.length - 1;
 
-                if(dataService.quizQuestions[quiz.activeQuestion].selected === null)
+                while(!breakOut)
                 {
-                    breakOut = true;
+                    quiz.activeQuestion = quiz.activeQuestion < quizLength ? ++quiz.activeQuestion : 0;
+
+                    if(dataService.quizQuestions[quiz.activeQuestion].selected === null)
+                    {
+                        breakOut = true;
+                    }
                 }
             }
+            else
+            {
+                quiz.activeQuestion = index;
+            }
+
+        };
+
+        quiz.selectAnswer = function(index)
+        {
+            dataService.quizQuestions[quiz.activeQuestion].selected = index;
         }
     }
 
