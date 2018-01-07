@@ -143,7 +143,7 @@
             [
                 {
                     "name": "Australia",
-                    "image":"../images/australia.gif",
+                    "image":"./images/australia.gif",
                     "capital":"Canberra",
                     "monetaryUnit":"Australian Dollar",
                     "nationalLanguage":"English",
