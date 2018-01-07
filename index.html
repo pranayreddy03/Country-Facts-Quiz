@@ -181,6 +181,30 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                <div class="row">
+                    <h3>Questions:</h3>
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>{{result.activeQuestion + 1 + '. ' + result.dataService.quizQuestions[result.activeQuestion].text}}</h4>
+                                <div class="row">
+                                    <div class="col-sm-6" ng-repeat="answer in result.dataService.quizQuestions[result.activeQuestion].possibilities">
+                                        <h4 class="answer" ng-class="result.getAnswerClass($index)">
+                                            {{answer.answer}}
+                                            <p class="pull-right" ng-show="$index !== result.quizMetrics.correctAnswers[result.activeQuestion] && $index === result.dataService.quizQuestions[result.activeQuestion].selected">
+                                                Your Answer</p>
+                                            <p class="pull-right" ng-show="$index === result.quizMetrics.correctAnswers[result.activeQuestion]">Correct Answer</p>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
