@@ -8,10 +8,13 @@
         var dataFactory =
             {
                 countriesData: countriesData,
-                quizQuestions: quizQuestions
+                quizQuestions: quizQuestions,
+                correctAnswers: correctAnswers
             };
         return dataFactory;
     }
+
+    var correctAnswers = [2, 0, 3, 1, 1, 3, 2, 3, 3, 3];
 
             var quizQuestions = [
                 {
@@ -112,12 +115,12 @@
                 },
                 {
                     type : "text",
-                    text: "Which of these is Flag of China",
+                    text: "Which country's currency is the Yuan?",
                     possibilities:  [
-                        {answer: "./images/russia.gif"},
-                        {answer: "./images/china.gif"},
-                        {answer: "./images/safrica.gif"},
-                        {answer: "./images/japan.gif"}
+                        {answer: "Japan"},
+                        {answer: "Russia"},
+                        {answer: "India"},
+                        {answer: "China"}
                     ],
                     selected: null,
                     correct: null
