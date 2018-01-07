@@ -2,3 +2,13 @@
 {
     margin-top: 30px;
 }
+.answer
+{
+    padding: 15px 20px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+}
+.answer:hover
+{
+    cursor: pointer;
+}
