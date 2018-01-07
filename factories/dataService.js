@@ -152,7 +152,7 @@
                 },
                 {
                     "name": "Brazil",
-                    "image":"../images/brazil.gif",
+                    "image":"./images/brazil.gif",
                     "capital":"Brasilia",
                     "monetaryUnit":"Real",
                     "nationalLanguage":"Portuguese",
@@ -161,7 +161,7 @@
                 },
                 {
                     "name": "Canada",
-                    "image":"../images/canada.gif",
+                    "image":"./images/canada.gif",
                     "capital":"Ottawa",
                     "monetaryUnit":"Canadian Dollar",
                     "nationalLanguage":"English",
@@ -170,7 +170,7 @@
                 },
                 {
                     "name": "China",
-                    "image":"../images/china.gif",
+                    "image":"./images/china.gif",
                     "capital":"Beijing",
                     "monetaryUnit":"Yuan",
                     "nationalLanguage":"Standard Chinese",
@@ -179,7 +179,7 @@
                 },
                 {
                     "name": "France",
-                    "image":"../images/france.gif",
+                    "image":"./images/france.gif",
                     "capital":"Paris",
                     "monetaryUnit":"Euro",
                     "nationalLanguage":"French",
@@ -188,7 +188,7 @@
                 },
                 {
                     "name": "Germany",
-                    "image":"../images/germany.gif",
+                    "image":"./images/germany.gif",
                     "capital":"Berlin",
                     "monetaryUnit":"Euro",
                     "nationalLanguage":"German",
@@ -197,7 +197,7 @@
                 },
                 {
                     "name": "India",
-                    "image":"../images/india.gif",
+                    "image":"./images/india.gif",
                     "capital":"New Delhi",
                     "monetaryUnit":"Rupee",
                     "nationalLanguage":"Hindi",
@@ -206,7 +206,7 @@
                 },
                 {
                     "name": "Russia",
-                    "image":"../images/russia.gif",
+                    "image":"./images/russia.gif",
                     "capital":"Moscow",
                     "monetaryUnit":"Russian ruble",
                     "nationalLanguage":"Russian",
