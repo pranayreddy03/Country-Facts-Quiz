@@ -103,7 +103,25 @@
                             </div>
                         </div>
                     </div>
+                </div> <!--End of Progress and legend-->
+
+                <div class="row">
+                    <h3>Question:</h3>
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>{{quiz.activeQuestion + 1 + '. ' + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
+                                <div class="row">
+                                    <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilities">
+                                        <h4 class="answer">{{answer.answer}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning" ng-click="quiz.questionAnswered()">Continue</button>
+                    </div>
                 </div>
+
             </div> <!-- ******* End of Quiz Controller ****** -->
 
         </div>
