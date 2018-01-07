@@ -15,7 +15,7 @@
                 <h3>Learn about the countries before you decide to take on the <strong>Country Quiz</strong></h3>
             </div>
 
-            <div ng-controller="listController as list" ng-hide="list.quizMetrics.quizActive">
+            <div ng-controller="listController as list" ng-hide="list.quizMetrics.quizActive || list.quizMetrics.resultsActive">
 
                 <form class="form-inline well well-sm clearfix">
                     <span class="glyphicon glyphicon-search"></span>
@@ -106,8 +106,12 @@
                 </div> <!--End of Progress and legend-->
 
                 <div class="row">
+                    <div class="alert alert-danger" ng-show="quiz.error">
+                        Error! You have not answered all of the questions!!
+                        <button class="close" ng-click="quiz.error = false">&times</button>
+                    </div>
                     <h3>Question:</h3>
-                    <div class="well well-sm">
+                    <div class="well well-sm" ng-hide="quiz.finalize">
                         <div class="row">
                             <div class="col-xs-12">
                                 <h4>{{quiz.activeQuestion + 1 + '. ' + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
@@ -131,9 +135,53 @@
                         </div>
                         <button class="btn btn-warning" ng-click="quiz.questionAnswered()">Continue</button>
                     </div>
+
+                    <div class="well well-sm" ng-show="quiz.finalize">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Are you sure you want to submit your answers?</h3>
+                                <button class="btn btn-success" ng-click="quiz.finalizeAnswers()">Yes</button>
+                                <button class="btn btn-danger" ng-click="quiz.finalize = false">No</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div> <!-- ******* End of Quiz Controller ****** -->
 
+            <div ng-controller="resultsController as result" ng-show="result.quizMetrics.resultsActive">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>Results:</h2>
+                        <div class="btn-toolbar">
+                            <button class="btn" ng-repeat="question in result.dataService.quizQuestions"
+                                             ng-class="{'btn-success': question.correct , 'btn-danger': !question.correct}"
+                                             ng-click="result.setActiveResultQuestion($index)">
+                                <span class="glyphicon" ng-class="{'glyphicon-ok' : question.correct , 'glyphicon-remove' : !question.correct}">
+
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="row">
+                            <h4>Legend:</h4>
+                            <div class="col-sm-4">
+                                <div class="btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    <p>Correct</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                    <p>Incorrect</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--Third Party js-->
@@ -144,6 +192,7 @@
         <script src="js/app.js"></script>
         <script src="js/controllers/listController.js"></script>
         <script src="js/controllers/quizController.js"></script>
+        <script src="js/controllers/resultsController.js"></script>
         <script src="factories/quizMetrics.js"></script>
         <script src="factories/dataService.js"></script>
 </body>
