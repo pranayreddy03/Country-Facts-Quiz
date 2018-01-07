@@ -182,7 +182,12 @@
                     </div>
                 </div>
 
-
+                <div class="row">
+                    <div class="col-xs-12 top-buffer">
+                        <h2>You Scored: {{result.quizMetrics.numOfCorrect}} / {{result.dataService.quizQuestions.length}}</h2>
+                        <h2><strong>{{result.calculatePercentage() | number : 2}}%</strong></h2>
+                    </div>
+                </div>
 
                 <div class="row">
                     <h3>Questions:</h3>
@@ -203,6 +208,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <button class="btn btn-primary btn-lg" ng-click="result.reset()">Go back to facts</button>
                 </div>
 
             </div>
