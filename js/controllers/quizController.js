@@ -19,7 +19,6 @@
 
         quiz.questionAnswered = function()
                                 {
-                                    console.log('one');
                                     var quizLength = dataService.quizQuestions.length;
                                     if(dataService.quizQuestions[quiz.activeQuestion].selected !== null)
                                     {
@@ -48,7 +47,6 @@
         {
             if(index === undefined)
             {
-                console.log('two');
                 var breakOut = false;
                 var quizLength = dataService.quizQuestions.length - 1;
 
@@ -89,5 +87,4 @@
             quizMetrics.changeState("results", true);
         }
     }
-
 })();

@@ -11,6 +11,9 @@
         var quizMetricsfactory = {
                         quizActive : false,
                         resultsActive : false,
+                        correctAnswers : [],
+                        markQuiz: markQuiz,
+                        numOfCorrect : 0,
                         changeState : function changeState(metric, state)
                                        {
                                            if(metric === "quiz")
@@ -25,31 +28,25 @@
                                            {
                                                return false;
                                            }
-                                       },
-                        correctAnswers : [],
-                        markQuiz: markQuiz,
-                        numOfCorrect : 0
+                                       }
                       };
         return quizMetricsfactory;
 
-    }
-
-    function markQuiz()
-    {
-        quizMetricsfactory.correctAnswers = dataService.correctAnswers;
-        for(var i=0; i< dataService.quizQuestions.length;i++)
+        function markQuiz()
         {
-            if(dataService.quizQuestions[i].selected === dataService.correctAnswers[i])
+            quizMetricsfactory.correctAnswers = dataService.correctAnswers;
+            for(var i=0; i< dataService.quizQuestions.length;i++)
             {
-                dataService.quizQuestions[i].correct = true;
-                quizMetricsfactory.numOfCorrect++;
-            }
-            else
-            {
-                dataService.quizQuestions[i].correct = true;
+                if(dataService.quizQuestions[i].selected === dataService.correctAnswers[i])
+                {
+                    dataService.quizQuestions[i].correct = true;
+                    quizMetricsfactory.numOfCorrect++;
+                }
+                else
+                {
+                    dataService.quizQuestions[i].correct = false;
+                }
             }
         }
     }
-
-
 })();

@@ -214,5 +214,4 @@
                     "description":"The Russian Federation is the largest of the 21 republics that make up the Commonwealth of Independent States. It occupies most of eastern Europe and north Asia, stretching from the Baltic Sea in the west to the Pacific Ocean in the east, and from the Arctic Ocean in the north to the Black Sea and the Caucasus in the south. It is bordered by Norway and Finland in the northwest; Estonia, Latvia, Belarus, Ukraine, Poland, and Lithuania in the west; Georgia and Azerbaijan in the southwest; and Kazakhstan, Mongolia, China, and North Korea along the southern border."
                 }
             ]
-
 })();
